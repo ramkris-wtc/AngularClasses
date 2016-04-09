@@ -1,0 +1,18 @@
+
+A high level overview of AngularJS. How different Angular concepts fit together in application construction? How Angular allows developers to modularize their code and later piece them together with the help dependency injection?
+
+1) Important Angular Concepts
+	- Data binding
+		Controllers
+		Views/Templates
+		$scope
+		Directives
+	- Communicating with server side logic
+		$http service
+		$q and promises
+	- Dependency Injection
+
+
+
+
+

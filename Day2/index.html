@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<input type="text" ng-model="firstname"></input>
+<span>{{firstname + "Hello"}}</span>
+</body>
+</html>
+ -->
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div>{{1 + 10}}</div>
+<div>{{"Halo"}}</div>
+<div>{{"Halo".length}}</div>
+	</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+<div ng-controller="StudentController">
+		<input type="text" ng-model="firstname"></input>
+		<span>{{firstname}}</span>
+	</div>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+<div ng-controller="CompanyController">
+		
+		<span>{{name}}</span>
+		<div ng-controller="EmployeeController">
+			<span>{{name}}</span>
+		</div>
+	</div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="MovieController as movie">
+		<span>{{movie.name}}</span> <br/>
+		<span>{{movie.year}}</span> <br/>
+		<span>{{movie.genre}}</span> <br/>
+	</div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="GroceryController as grocery">
+		<ul>
+			<li ng-repeat="g in grocery.groceries">
+				<span>{{ g.item }}</span> <br/>	
+				<span>{{ g.qnty }}</span> <br/>
+				<span>{{ g.price }}</span> <br/>
+				<hr/>
+			</li>
+		</ul>
+	</div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="GroceryController as grocery">
+		<ul>
+			<li ng-repeat="g in grocery.groceries">
+				<span>{{ g.item }}</span> <br/>	
+				<span>{{ g.qnty }}</span> <br/>
+				<span>{{ g.price | currency}}</span> <br/>
+				<hr/>
+			</li>
+		</ul>
+	</div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="GroceryController as grocery">
+		<ul>
+			<li ng-repeat="g in grocery.groceries | orderBy:'-qnty'">
+				<span>{{ g.item }}</span> <br/>	
+				<span>{{ g.qnty }}</span> <br/>
+				<span>{{ g.price | currency}}</span> <br/>
+				<hr/>
+			</li>
+		</ul>
+	</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li ng-repeat="i in [1,2,3,4] | squareme">
+				<span>{{ i }}</span> <br/>	
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li ng-repeat="name in ['john','miller','jenny']">
+				<span>{{ name | hellome:'hi':'hi11'}}</span> <br/>	
+			</li>
+		</ul>
+	</div>
+</body>
+</html> -->

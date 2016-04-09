@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script type="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	
+
+	<div ng-controller="TestController as testCtrl">
+		<input type="button" ng-click="testCtrl.sayHello()" value="Say Hello" />
+		<span>{{testCtrl.hello}}</span>
+		<span>{{testCtrl.hello1}}</span>
+	</div>
+
+	<div ng-controller="BookController as bookCtrl">
+		<ul>
+			<li ng-repeat="book in bookCtrl.books">
+				<span>{{book.id}}</span><br/>
+				<span>{{book.title}}</span><br/>
+				<span>{{book.author}}</span><br/>
+				<hr/>
+			</li>
+		</ul>
+
+		<div>
+			<label>id</label>
+			<input ng-model="bookCtrl.newBook.id"></input><br/>
+			<label>Title</label>
+			<input ng-model="bookCtrl.newBook.title"></input><br/>
+			<label>Author</label>
+			<input ng-model="bookCtrl.newBook.author"></input><br/>
+			<input type="button" ng-click="bookCtrl.addNewBook()" value="Add Book"/>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script type="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="TestController as testCtrl">
+		<h2>{{testCtrl.greeting}}</h2>
+		<h3>{{testCtrl.today}}</h3>
+	</div>
+	<div ng-controller="RecipeController as recipeCtrl">
+		<a id="top" href="#"></a>
+		<ul>
+			<li ng-repeat="recipe in recipeCtrl.recipies">
+				<a href="#" ng-click="recipeCtrl.navigateTo(recipe.title)">{{recipe.title}}</a>
+			</li>
+		</ul>
+
+		<ul>
+			<li ng-repeat="recipe in recipeCtrl.recipies">
+				<h2 id="{{recipe.title}}">{{recipe.title}}</h2>
+				<p>{{recipe.instructions}}</p>
+				<a href="#" ng-click="recipeCtrl.navigateTop()">Go to Top</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

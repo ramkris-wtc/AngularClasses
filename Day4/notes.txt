@@ -1,0 +1,19 @@
+
+
+Angular comes with many builtin services. Some of these are wrappers around the web browser objects. For e.g. browser's window object is wrapped inside $window. Angular does this so that it can perform change detection
+and kick off it's digest cycle so that things like data binding work as expected.
+
+Some of the Angular services' implementation can be changed so that they behave differently. For example, any exception ocurred inside your Angular code is captured and simply logged to the console by the framework. This can be changed so that the exceptions appear in an alert box by changing $exceptionHandler service. These services are implemented as providers and can be configured.
+
+Let's discuss the following Angular services with the help of code samples.
+
+- $anchorScrollService,
+- $location
+- $log, 
+- $exceptionHandlerService
+- $timeout
+- $filter
+- $injector
+
+
+For more on Angular services - https://gist.github.com/demisx/9605099

@@ -1,0 +1,15 @@
+
+- Angular makes it easy to work with forms. 
+
+- ng-model attribute is all it takes to bind a form input control to a controller property and get the automatic  two-way data binding to work. This has been demonstrated before when discussing databinding basics.
+
+- Angular also helps developers with form valdation. But before Angular can apply it's form validation logic, it is important to have 'novalidate' applied on forms. 'novalidate' disables HTML5 validation that browsers apply on forms.
+
+- Angular applies certain classes to form elements depending on their state. For e.g. if an input elements is in a valid state, it applies ng-valid class. Even though, Angular applies these classes on form elements, it is up to the developer to define these classes in style sheet.
+
+- setting name attribute on a form creates a controller. setting names on form elements creates form elements as properties on the form controller. Once we have a form and it's elements in a controller, we can use them inside binding expressions in views.
+
+- ng-model-options’ updateOn and debounce allows us to configure when Angular updates the model in response to a change in the value of form’s input elements. updateOn:blur waits until the focus shifts to another control before updating model value. Debounce tells Angular to wait until the specified time interval elapses before updating the model value.
+
+
+

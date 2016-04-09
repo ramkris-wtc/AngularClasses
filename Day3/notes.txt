@@ -1,0 +1,23 @@
+Notes
+-----
+
+1) Angular services typically contain logic that is shared across the app.
+2) Any logic that is shared across different controllers/services can potentially be refactored into a service.
+3) Angular services are singletons. There will always be one and only one instance of service in memory.
+4) Service's state persists as the user moves back and forth in the app between different routes.
+5) Angular services can be injected into controllers and other services aka dependency injection.
+6) Services encapsulate data related logic while controllers encapsulate view related logic
+
+There are a couple of different ways of creating angular services
+	- factory  - object returned from the factory function is used as the service
+	- service  - service function is invoked with the 'new' operator similar to a constructor function
+	- value    - plain Javascript objects when wrapped inside a value will act like services that can be injected
+		     Things like CurrentUser, Error messages can be wrapped inside angular.value(...)
+	- constant - App specific constants or other mathematical constants can be created this way
+	
+Exercises
+---------
+
+	1) Work on the edit functionality of the sample code
+	2) Create PI constant and use that inside a service that will calculate circle's area (pi * r * r) and circumferece (2 * pi * r) ?
+

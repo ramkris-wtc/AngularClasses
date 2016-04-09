@@ -1,0 +1,29 @@
+
+We need to know a little on what promises are before we can start using $http service because it uses promises. Before understanding promises, it will help us to know how asynchronous code is different from synchronous code.
+
+- Synchronous methods do some work and return to the caller as and when they are done with the work.
+
+- On the other hand, Asynchronous code takes a while to complete but returns immediately to the caller. This begs a question, how do they send the result of their work to the caller since the control was already returned before the work was done?
+
+- There are 2 approaches; callbacks and promises.
+
+- With callbacks, the Async method being called is given a function/method by the caller that it can call and send the result back to the caller. One drawback with this approach is, when we have too many Async calls involved, the resulting code becomes unreadbale and handling errors becomes a challenge.
+
+- Promises attempt to solve by giving developers a clean and easy to work with API.
+
+- At any given point of time, a promise can be in one of any of these 3 states; resolved, rejected or pending. 
+
+- When a function returns a promise, any caller calling that function can use the then() method on the returned promise to pass success/fail callbacks. When the promise is resolved, success callback is called with any result that the called method may want to pass into the caller. When the promise is rejected, the error callback is called.
+
+- Promises can be chained resulting in a flat code structure that is easier to read and to handle errors.
+
+- Angular's $q service implements the promise API.
+
+
+- For us to interact with server side http endpoints, we need a server to work with. json-server is an npm package that quickly lets us build fake json api and also work as a static file server.
+
+- npm install -g json-server will install the package as a global module.
+
+- once installed, type in "json-server --watch db.json --static ." to fire up the local server. This will  serve both as a JSON API server and a static server for all our client side Angular files. A sample db.json is included in the material.
+
+

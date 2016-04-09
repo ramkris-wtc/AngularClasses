@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script type="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style type="text/css">
+		  input.ng-invalid.ng-touched {
+		    background-color: #FA787E;
+		  }
+
+		  input.ng-valid.ng-touched {
+		    background-color: #78FA89;
+		  }
+	</style>
+
+</head>
+<body>
+	
+	<!-- <form>
+			<label>Name</label>
+			<input type="text" required></input>
+			<label>Email</label>
+			<input type="email" required></input>
+	</form>
+	<br/>
+	<div ng-controller="EmployeeController as empCtrl">
+		<form novalidate>
+			<label>Name</label>
+			<input type="text" ng-model="empCtrl.name" required></input>
+			<label>Email</label>
+			<input type="email" ng-model="empCtrl.email" required></input>
+		</form>
+	</div> -->
+
+	<!-- <div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input type="text" ng-model="empCtrl.name" required></input>
+			<label>Email</label>
+			<input type="email" ng-model="empCtrl.email" required></input>
+		</form>
+	</div> -->
+
+	<!-- <div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input name="empName" type="text" ng-model="empCtrl.name" required></input>
+			<label>Email</label>
+			<input type="email" ng-model="empCtrl.email" required></input>
+		</form>
+	</div> -->
+
+	<!-- <div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input name="empName" type="text" ng-model="empCtrl.name" required></input>
+			<br/><br/>
+			<label>Email</label>
+			<input name="empEmail" type="email" ng-model="empCtrl.email" required></input>
+			<br/>
+			<div ng-show="empForm.$submitted || empForm.empEmail.$touched">
+      			<span ng-show="empForm.empEmail.$error.required">Tell us your email.</span>
+      			<span ng-show="empForm.empEmail.$error.email">This is not a valid email.</span>
+    		</div>
+    		<input type="button" value="Change style class" ng-click="empCtrl.change(empForm)"/>
+    	</form>
+	</div> -->
+
+	<!-- <div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input type="text" ng-model="empCtrl.name" ng-model-options="{updateOn: 'blur'}" required></input>
+			<label>Email</label>
+			<input type="email" ng-model="empCtrl.email" required></input>
+			<br/>
+			<span>{{empCtrl.name}}</span>
+		</form>
+	</div> -->
+
+	<!-- <div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input type="text" ng-model="empCtrl.name" ng-model-options="{debounce: 500}" required></input>
+			<label>Email</label>
+			<input type="email" ng-model="empCtrl.email" required></input>
+			<br/>
+			<span>{{empCtrl.name}}</span>
+		</form>
+	</div> -->
+
+	<div ng-controller="EmployeeController as empCtrl">
+		<form name="empForm" novalidate>
+			<label>Name</label>
+			<input name="empName" type="text" ng-model="empCtrl.name" required></input>
+			<br/><br/>
+			<label>Email</label>
+			<input name="empEmail" type="email" ng-model="empCtrl.email" ng-model-options="{debounce: 500}" required></input>
+			<br/>
+			
+      			<span ng-show="empForm.empEmail.$error.email">This is not a valid email.</span>
+    		
+    	</form>
+	</div>
+</body>
+</html>

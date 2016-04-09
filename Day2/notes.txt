@@ -1,0 +1,22 @@
+
+Discuss the following topics with code examples
+
+1) Controllers - Controllers are meant for views. Any logic that deals with pure data must go inside services.
+2) Angular Expressions - written inside {{ }}.
+3) $scope - Think of scope as the view model.
+4) Controller as syntax
+5) Filters - number, currency, date, uppercase, lowercase, orderby
+6) ng-model, ng-controller, ng-repeat
+
+- install node package http-server to serve files from a local server rather than from the file system
+- Install batarang chrome extension to inspect scope heirarchies
+
+
+Exercises
+---------
+
+1) write a filter that takes arguments ?
+2) study the TODO app on the angularjs home page and build a similar app ?
+		- it will have a list of items; for e.g. could be a list of fruits/movies
+		- do some action when an item in the list is clicked. Action could be changing it's color
+			or turning the item into bold 
