@@ -1,9 +1,12 @@
+7-Apr-2016
+-----------
+
 
 We need to know a little on what promises are before we can start using $http service because it uses promises. Before understanding promises, it will help us to know how asynchronous code is different from synchronous code.
 
 - Synchronous methods do some work and return to the caller as and when they are done with the work.
 
-- On the other hand, Asynchronous code takes a while to complete but returns immediately to the caller. This begs a question, how do they send the result of their work to the caller since the control was already returned before the work was done?
+- On the other hand, Asynchronous code typically does some I/O bound operation that takes a while to complete but returns immediately to the caller. This begs a question, how do they send the result of their work to the caller since the control was already returned before the work was done?
 
 - There are 2 approaches; callbacks and promises.
 
@@ -25,5 +28,23 @@ We need to know a little on what promises are before we can start using $http se
 - npm install -g json-server will install the package as a global module.
 
 - once installed, type in "json-server --watch db.json --static ." to fire up the local server. This will  serve both as a JSON API server and a static server for all our client side Angular files. A sample db.json is included in the material.
+
+- $http service can be used for communicating with http services.
+
+- All http verbs are exposed as methods on the $http services. So, to make a GET request to an HTTP resouce, all you need to do is call $http.get(...).
+
+- request headers can be set both at the individual request level or application level that affects all requests. At the individual request level, setting the config option will set the headers.At the application level, $httpProvider.defaults.headers is used in the config block of the module for this purpose.
+
+- http interceptors allow you to hook into http request life cycle and run some logic depending on application state.
+
+- http interceptors can be used to do things such as setting auth tokens, running a piece of code on http errors etc. Http interceptor is any service created with a factory() or service() method with request, requestError, response and responseError properties mapped to functions.
+
+- Since http interceptor is just like any service, you can inject other services into it. A typical use case would be to inject UserService to check if a user is logged in and if so set http auth token on every subsequent request. Another use case could be to redirect the user to login route if server responds with an error when the user tries to access resources meant only for registered users.
+
+- Request and response data transformations can be done using $http service. As an example, consider dealing with a product api that returns a lot of information about a product but application's Angular ProductService is only interested in product's name, image and price. In cases like these we can use a transform function to transform the data coming from the product API to something that our service is interested in.
+
+- Transformation functions can be specified at the individual request level using transformRequest and transformResponse properties on the config parameter.
+
+- ngResource module exposes $resource service which makes it easier for us to work with RESTful services. The idea behind $resource service is to raise the level of abstraction and deal with resources as opposed to raw http requests.
 
 
