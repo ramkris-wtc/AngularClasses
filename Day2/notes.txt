@@ -1,12 +1,40 @@
 
-Discuss the following topics with code examples
+Notes  (1-Apr-2016)
+--------------------
 
-1) Controllers - Controllers are meant for views. Any logic that deals with pure data must go inside services.
-2) Angular Expressions - written inside {{ }}.
-3) $scope - Think of scope as the view model.
-4) Controller as syntax
-5) Filters - number, currency, date, uppercase, lowercase, orderby
-6) ng-model, ng-controller, ng-repeat
+Controllers - Controllers are meant for views. Any logic that deals with pure data must go inside services.
+
+Angular Expressions - written inside {{ }}.
+
+$scope - Think of scope as the view model.
+
+Controller as syntax allows you to give an alias name to controllers in views and on the controller side, it replaces the use of $scope with the 'this' resulting in cleaner code.
+
+Filters - When a filter is applied on an Angular expression, it's value is modified according to the logic in the filter function. Angular comes with  some useful filters like number, currency, date, uppercase, lowercase, orderby
+
+ng-model directive binds input elements to controller properties
+
+ng-controller directive specifies what Angular controller manages the element it is applied on.
+
+ng-repeat directive loops over a collection of items and for every item in the collection, it generates view from the template it is applied on.
+
+scopes can fire events. when a scope fires events, it's children scopes or parent scopes will be notified of those events.
+
+When a scope fires events using broadcast() method, it's children scopes are notified.
+
+When a scope fires events using emit() method, it's parent scopes are notified.
+
+When firing events, a controller's scope may choose to pass data to all it's listeners. This data will be available in the second argument of the listerner function on the event receiving scope's on(...) method.
+
+Events can be unsubscribed by calling the function returned from the on(...) method.
+
+rootScope's emit works little differently. Since there is no scope above the rootScope, instead of emitting the event up, emit() on rootScope actually fires the event down the scope heirarchy but only to those listening using $rootScope.on(...)
+
+Refer to the following link for more info....
+
+https://toddmotto.com/all-about-angulars-emit-broadcast-on-publish-subscribing/ 
+
+
 
 - install node package http-server to serve files from a local server rather than from the file system
 - Install batarang chrome extension to inspect scope heirarchies
@@ -20,3 +48,6 @@ Exercises
 		- it will have a list of items; for e.g. could be a list of fruits/movies
 		- do some action when an item in the list is clicked. Action could be changing it's color
 			or turning the item into bold 
+			
+3) Demonstrate how events on rootScope works with the help of an example ?
+4) Demonstrate how to unsubscribe listening to an event with sample code ?

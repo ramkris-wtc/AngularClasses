@@ -57,4 +57,36 @@ app.filter('squareme',function(){
 	}
 })
 
+app.controller('EventFiringController', function($scope){
+	this.fireUp = function(){
+		$scope.$emit('emitup', 'eventupdata')
+	}
+	
+	this.fireDown = function(){
+		$scope.$broadcast('broadcastdown', 'broadcastdowndata')
+	}
+})
+
+app.controller('ChildController', function($scope){
+	var vm = this;
+	$scope.$on('emitup', function(e, data){
+		vm.value = data;
+	});
+	
+	$scope.$on('broadcastdown', function(e, data){
+		vm.value = data;
+	});
+})
+
+app.controller('ParentController', function($scope){
+	var vm = this;
+	$scope.$on('emitup', function(e, data){
+		vm.value = data;
+	});
+	
+	$scope.$on('broadcastdown', function(e, data){
+		vm.value = data;
+	});
+})
+
 

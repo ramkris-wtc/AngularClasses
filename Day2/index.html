@@ -140,23 +140,23 @@
 </html> -->
 
 
-<!DOCTYPE html>
-<html ng-app="myApp">
-<head>
-	<title></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="app.js"></script>
-</head>
-<body>
-	<div>
-		<ul>
-			<li ng-repeat="i in [1,2,3,4] | squareme">
-				<span>{{ i }}</span> <br/>	
-			</li>
-		</ul>
-	</div>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html ng-app="myApp">-->
+<!--<head>-->
+<!--	<title></title>-->
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>-->
+<!--    <script src="app.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--	<div>-->
+<!--		<ul>-->
+<!--			<li ng-repeat="i in [1,2,3,4] | squareme">-->
+<!--				<span>{{ i }}</span> <br/>	-->
+<!--			</li>-->
+<!--		</ul>-->
+<!--	</div>-->
+<!--</body>-->
+<!--</html>-->
 
 <!-- <!DOCTYPE html>
 <html ng-app="myApp">
@@ -175,3 +175,31 @@
 	</div>
 </body>
 </html> -->
+
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body>
+	<div ng-controller="ParentController as parentCtrl">
+		Parent - {{parentCtrl.value}}
+
+		<div ng-controller="EventFiringController as eventCtrl">
+
+			<input type="button" value="Fire Up" ng-click="eventCtrl.fireUp()" />
+			<input type="button" value="Fire Down" ng-click="eventCtrl.fireDown()" />
+		
+			<div ng-controller="ChildController as childCtrl">
+				Child - {{childCtrl.value}}
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
