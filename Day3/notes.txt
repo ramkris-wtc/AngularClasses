@@ -1,5 +1,5 @@
-Notes
------
+Notes (4-Apr-2016)
+------------------
 
 1) Angular services typically contain logic that is shared across the app.
 2) Any logic that is shared across different controllers/services can potentially be refactored into a service.

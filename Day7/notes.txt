@@ -1,0 +1,17 @@
+11-Apr-2016
+------------
+
+Any real world web app's UI is composed of multiple pages. As an example, consider a typical case of an ecommerce website that has a product list page, product details page, search results page so on. 
+
+If such an app was designed to be a Single Page App(SPA) then those different pages would load up in the background as browser's URL changes. These different pages can be thought of different routes that users of the website can navigate to.
+
+Angular, being a SPA framework, gives a routing service that developers can use to define app's routes and map those routes to controllers and templates. This routing service does things like managing browser's back/forward buttons, picking up changes to location bar and loading up controllers, templates as needed etc.
+
+The routing service comes in a separate JS file (angular-route.min.js) and must be referenced by a script tag before it can be used.
+
+Once angular-route.min.js is referenced, ngRoute module can be added as a dependency of app module and within the app.config() block routeProvider can be configured with all of app's routes with different controllers/templates they map to.
+
+A route definition has properties like it's URL with any parameters they may take, controller to load up, template/templateURL to inject into main layout's ng-view tag and any data that the developer may want available inside the controller.
+
+
+

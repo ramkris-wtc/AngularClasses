@@ -1,0 +1,22 @@
+
+5-Apr-2016
+----------
+
+1) Write a controller, use it inside a view to demonstrate Angular databinding ?
+2) Write a program that uses 'date' filters ?
+3) Write a custom filter that takes a collection of numbers and returns even or add numbers based on the argument passed?
+4) Create a PI constant and use it in a CircleService to compute area and circumference of a circle ? 
+
+12-Apr-2016
+------------
+
+Build an app with the following functionality. 
+
+1) It should recognize a few users.
+2) A Login form that takes the user inside the app upon entering right credentials.
+3) Once inside, the user can click on links and see data available only for registered users.
+4) When a guest user attempts to view protected data, present him the login form.
+
+A real world app like this requires a database setup and involves making calls to server side API.
+For the purpose of this app, store users and all the other data in arrays inside your JS files.
+The idea behind this exercise is to simulate the workflow that is common to majority of web apps.

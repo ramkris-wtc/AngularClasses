@@ -1,0 +1,5 @@
+<ul>
+    <li ng-repeat="product in productCtrl.products | filter:{id:productCtrl.currentProductId}">
+        <span>{{product.details}}</span>
+    </li>
+</ul>

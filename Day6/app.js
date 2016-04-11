@@ -165,30 +165,35 @@ app.service('UserService', function(){
 app.factory('apiInterceptor', function(UserService){
 	return {
 		request: function(config) {
+			console.log(config);
 			if(UserService.currentUser){
 				config.headers['auth_token'] = UserService.currentUser.auth_token;
-				console.log(config)
+				//console.log(config)
 			}
 			return config;
 		},
 
-		requestError: function(config) {
-			return config;
-		},
+		// requestError: function(config) {
+		// 	return config;
+		// },
 
 		response: function(res) {
+			console.log(res);
 			return res;
 		},
 
 		responseError: function(res) {
+			console.log(res);
 			return res;
 		}
 	}
 })
 
 app.config(function($httpProvider){
-	//$httpProvider.defaults.headers.common["MyHeader1"] = 'ZZZZZZZZZZZ';
-	$httpProvider.defaults.headers.post["MyHeader1"] = 'ZZZZZZZZZZZ';
+	$httpProvider.defaults.headers.common["MyHeader1"] = 'ZZZZZZZZZZZ';
+	$httpProvider.defaults.headers.get = { 'My-Header' : 'value' }
+	$httpProvider.defaults.headers.post["MyHeader2"] = 'ZZZZZZZZZZZ';
+	
 	$httpProvider.interceptors.push('apiInterceptor');
 })
 
