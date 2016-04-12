@@ -1,0 +1,35 @@
+It is through directives Angularjs enhances HTML vocabulary.
+
+Things like ng-model, ng-repeat, ng-controller that you have seen so far are all directives.
+
+Angular's directives can be implemented in the following forms
+
+    1) Elements
+    2) Attributes
+    3) CSS class
+    4) Comments 
+    
+Of these 4, Angular documentation recommends using the first two; elemets and attributes.
+
+You call directive(...) on the module to create a directive. This method should return an object that defines how the directive should behave.
+
+The 'restrict' property on the directive object indicates the type of directive it is. It can take any of the following characters or a combination of these characters. If 'restrict' is set to 'AE', it can be used as both an attribute or an element.
+
+    E - Element
+    A - Attribute
+    C - Class
+    M - Comment
+    
+It is important to isolate directive's scope from it's parent scope when we want each instance of the directive to have it's own scope.
+
+As an example, consider building a Student directive. Everytime <student> directive is used in the markup, we want to it display a separate record of a student, not the same student record. This is achieved through isolate scopes.
+
+'scope' property on the directive definition is what creates an isolate scope. This is different from controller's $scope.
+
+When writing complex directives, we would like to manipulate DOM. compile(...) and link...() methods on directive definition can be used for this purpose.
+
+compile(...) method runs once each time Angular sees the directive. compile(...) method returns a link(...) method where DOM can be manipulated.
+
+link(...) method gets $scope as an argument, essentially giving it access to it's state and allowing us to manipulate it's DOM based on the state.
+
+setting transclude to true gives you an option to pass an entire template into the directive  and allows the directive to access it's outer scope

@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <title>Directives</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        
+        <!--<my-dir></my-dir>-->
+        
+        <!--<span my-dir="exp"></span>-->
+        
+        <!-- directive: my-dir exp -->
+        
+        <!--<span class="my-dir: exp;"></span>-->
+        
+        <test-directive></test-directive>
+        
+        <!--<div ng-controller="PersonController">-->
+        <!--    <person></person>-->
+        <!--    <person></person>-->
+        <!--</div>-->
+        
+        <div ng-controller="PersonController">
+            <person info="mark"></person>
+            <person info="john"></person>
+        </div>
+    </body>
+</html>
