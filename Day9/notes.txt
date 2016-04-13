@@ -1,0 +1,27 @@
+
+AngularJS makes it very easy for developers to setup 2 way databinding. It is important to know how this is achieved and what AngularJS does behind the scenes for this to work ? Knowing this will help you understand why databinding doesn't work in some cases, especially when you combine AngularJS with other libraries like Jquery.
+
+Lets understand the basics of how browsers work.
+
+All browsers implement what is called an event loop. When an event like 'mouse click', 'network call completion' or 'checkbox tick' raised, browser registers these events in an event queue. 
+
+As event go into the event queue, they get picked up from there and processed by browser one after another.
+
+Angular extends the event loop by what is called a digest loop/cycle. 
+
+It is inside the digest loop it performs dirty checking to determine if any values have changed and performs databinding if required. 
+
+Angular determines if a value is dirty or not by creating watches on every expression used in the app.
+
+Everytime an event that Angular is aware of is fired, digest loop kicks in, processes the watch list, determines dirty values and performs databinding. This cycle repeats for every event that Angular knows of.
+
+What events does Angular know of? It knows of all standard browser events and wraps them inside it's own constructs.
+
+For any events that Angular doesn't recognize, for example an event fired by external libraries like jquery or extjs, we must run the digest cycle by ourselves. 
+
+$digest(...) runs digest cycle
+$apply(...) enters into angular context and then digest cycles runs
+$watch(...) watches properties for any changes
+
+For more information http://angular-tips.com/blog/2013/08/watch-how-the-apply-runs-a-digest/
+

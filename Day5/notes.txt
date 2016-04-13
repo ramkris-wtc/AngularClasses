@@ -14,5 +14,6 @@
 
 - ng-model-options’ updateOn and debounce allows us to configure when Angular updates the model in response to a change in the value of form’s input elements. updateOn:blur waits until the focus shifts to another control before updating model value. Debounce tells Angular to wait until the specified time interval elapses before updating the model value.
 
+- custom form validation is implemented in custom directive that requires ngModelController. Inside the link function of custom directive, we write a function and add it to the ngModelController's validators object. These validator functions are run everytime input changes.
 
-
+- We can modify/remove builtin validators. Since validators are available on ngModelController's validators object, all we need to do is check if a validator exists and give it a new behavior or remove it completely.

@@ -1,25 +1,26 @@
-
 <!DOCTYPE html>
-<html ng-app="myApp">
+	<html ng-app="myApp">
+
 <head>
 	<title></title>
 	<script type="https://connect.facebook.net/en_US/sdk.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="app.js"></script>
+	<script src="app.js"></script>
 
-    <style type="text/css">
-		  input.ng-invalid.ng-touched {
-		    background-color: #FA787E;
-		  }
-
-		  input.ng-valid.ng-touched {
-		    background-color: #78FA89;
-		  }
+	<style type="text/css">
+		input.ng-invalid.ng-touched {
+			background-color: #FA787E;
+		}
+		
+		input.ng-valid.ng-touched {
+			background-color: #78FA89;
+		}
 	</style>
 
 </head>
+
 <body>
-	
+
 	<!-- <form>
 			<label>Name</label>
 			<input type="text" required></input>
@@ -96,14 +97,30 @@
 		<form name="empForm" novalidate>
 			<label>Name</label>
 			<input name="empName" type="text" ng-model="empCtrl.name" required></input>
-			<br/><br/>
+			<br/>
+			<br/>
 			<label>Email</label>
 			<input name="empEmail" type="email" ng-model="empCtrl.email" ng-model-options="{debounce: 500}" required></input>
 			<br/>
+
+			<span ng-show="empForm.empEmail.$error.email">This is not a valid email.</span>
+
+			<br />
+			<br />
 			
-      			<span ng-show="empForm.empEmail.$error.email">This is not a valid email.</span>
-    		
-    	</form>
+			<input type="number" ng-model="size" name="size" min="0" max="10" integer />{{size}}
+			<br />
+			<span ng-show="empForm.size.$error.integer">The value is not a valid integer!</span>
+			<span ng-show="empForm.size.$error.min || empForm.size.$error.max">The value must be in range 0 to 10!</span>
+			
+			<div>
+			    Overwritten Email:
+			    <input type="email" ng-model="myEmail" overwrite-email name="overwrittenEmail" />
+			    <span ng-show="empForm.overwrittenEmail.$error.email">This email format is invalid!</span><br>
+			    Model: {{myEmail}}
+    		</div>
+		</form>
 	</div>
 </body>
+
 </html>
